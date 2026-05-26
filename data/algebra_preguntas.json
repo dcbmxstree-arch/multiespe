@@ -174,11 +174,9 @@
       "\\( \\{a,b,c,d,e\\} \\)",
       "\\( \\{b,d,a,c,e\\} \\)"
     ],
-    "respuesta_correcta": 3,
-    "tipo": "multiple",
-    "explicacion": "\\( A^c = \\{b,d\\} \\), entonces \\( A^c \\cup B = \\{b,d\\} \\cup \\{b,d\\} = \\{b,d\\} \\). La opción 3 es todo el universo, pero la correcta es {b,d} (opción 2, revisar índice). En la lista la opción 2 es {b,d}. Perdón: opciones: 0: {a,c,e}, 1: {b,d}, 2: universo, 3: {b,d,a,c,e} que es universo también. La correcta es {b,d} (índice 1).",
     "respuesta_correcta": 1,
-    "explicacion": "A^c = {b,d}, unión con B = {b,d}.",
+    "tipo": "multiple",
+    "explicacion": "A^c = {b,d}, entonces A^c ∪ B = {b,d}.",
     "puntos": 1
   },
   {
@@ -356,7 +354,7 @@
       "\\( \\frac{2(3^{10} - 1)}{3-1} \\)",
       "\\( 2(3^{10} - 1) \\)"
     ],
-    "respuesta_correcta": 2,
+    "respuesta_correcta": 0,
     "tipo": "multiple",
     "explicacion": "a₁=2, r=3, suma = a₁(rⁿ-1)/(r-1) = 2(3¹⁰-1)/2 = 3¹⁰-1.",
     "puntos": 1
@@ -401,7 +399,7 @@
       "\\( \\frac{3(\\sqrt{5} + \\sqrt{2})}{3} \\)",
       "\\( \\frac{3(\\sqrt{5} + \\sqrt{2})}{7} \\)"
     ],
-    "respuesta_correcta": 1,
+    "respuesta_correcta": 0,
     "tipo": "multiple",
     "explicacion": "Multiplicar conjugado: 3(√5+√2)/(5-2)=3(√5+√2)/3 = √5+√2.",
     "puntos": 1
@@ -446,10 +444,8 @@
       "\\( (3, \\infty) \\)",
       "\\( [3, \\infty) \\)"
     ],
-    "respuesta_correcta": 1,
-    "tipo": "multiple",
-    "explicacion": "Raíz: x≥3. Denominador: x≠2 y x≠-2. Como x≥3, solo excluir 2. Dominio: [3,∞) pero 2 no está en ese intervalo, entonces [3,∞) sin restricción adicional (pues 2 no pertenece). Revisar: la opción correcta es [3,∞) porque 2 está fuera. La opción 3 es (3,∞) excluye 3. Entonces dominio [3,∞) es la opción 3? En las opciones: 0: [3,∞)\\{2}, 1: [3,∞)\\{-2,2}, 2: (3,∞), 3: [3,∞). Como 2 no está en [3,∞), da igual. La respuesta es [3,∞) índice 3.",
     "respuesta_correcta": 3,
+    "tipo": "multiple",
     "explicacion": "La raíz exige x-3≥0 → x≥3. El denominador x²-4≠0 → x≠±2, pero ±2 no están en [3,∞). Dominio = [3,∞).",
     "puntos": 1
   },
@@ -568,7 +564,7 @@
       "Creciente hasta cierto punto y luego decreciente",
       "Decreciente hasta cierto punto y luego creciente"
     ],
-    "respuesta_correcta": 2,
+    "respuesta_correcta": 3,
     "tipo": "multiple",
     "explicacion": "Derivada 3x²-1. En (0, 1/√3) es negativa, luego positiva. Por tanto decrece y luego crece.",
     "puntos": 1
@@ -608,9 +604,9 @@
       "\\( \\frac{\\pi}{4}, \\frac{3\\pi}{4}, \\frac{5\\pi}{4}, \\frac{7\\pi}{4} \\)",
       "\\( \\frac{\\pi}{2}, \\frac{3\\pi}{2} \\)"
     ],
-    "respuesta_correcta": 1,
+    "respuesta_correcta": 0,
     "tipo": "multiple",
-    "explicacion": "cos²x - sin²x = cos2x = 1/2 → 2x = π/3, 5π/3, 7π/3, 11π/3 → x = π/6, 5π/6, 7π/6, 11π/6. Opción 0.",
+    "explicacion": "cos²x - sin²x = cos2x = 1/2 → 2x = π/3, 5π/3, 7π/3, 11π/3 → x = π/6, 5π/6, 7π/6, 11π/6.",
     "puntos": 1
   },
   {
