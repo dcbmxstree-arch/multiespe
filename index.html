@@ -7,7 +7,9 @@
     <!-- KaTeX CSS & JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, { delimiters: [{left: '\\\\(', right: '\\\\)', display: false}, {left: '\\\\[', right: '\\\\]', display: true}] });"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" 
+            onload="renderMathInElement(document.body, { delimiters: [{left: '\\\\(', right: '\\\\)', display: false}, {left: '\\\\[', right: '\\\\]', display: true}] });">
+    </script>
     <style>
         * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background: #f0f2f5; margin: 0; padding: 20px; }
@@ -271,13 +273,16 @@
         html += `</div></div>`;
         preguntaContainer.innerHTML = html;
 
+        // FORZAR RENDERIZADO DE ECUACIONES CON KATEX
         if (window.renderMathInElement) {
-            window.renderMathInElement(preguntaContainer, {
+            renderMathInElement(preguntaContainer, {
                 delimiters: [
                     {left: '\\\\(', right: '\\\\)', display: false},
                     {left: '\\\\[', right: '\\\\]', display: true}
                 ]
             });
+        } else {
+            console.warn("KaTeX no está listo todavía");
         }
         progresoDiv.innerHTML = `Pregunta ${preguntaActualIndex+1} de ${preguntasExamen.length}`;
     }
