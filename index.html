@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Simulador Examen ESPE - Grupo D (Ingenierías)</title>
+    <!-- KaTeX CSS & JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, { delimiters: [{left: '\\\\(', right: '\\\\)', display: false}, {left: '\\\\[', right: '\\\\]', display: true}] });"></script>
+    <style>
+        * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: #f0f2f5; margin: 0; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); padding: 25px; }
+        h1, h2 { color: #1a3e6f; text-align: center; }
+        .step { display: none; }
+        .step.active { display: block; }
+        .form-group { margin-bottom: 20px; }
+        label { font-weight: bold; display: block; margin-bottom: 8px; }
+        input, select, button { width: 100%; padding: 12px; font-size: 16px; border: 1px solid #ccc; border-radius: 10px; }
+        button { background-color: #1a3e6f; color: white; border: none; cursor: pointer; font-weight: bold; transition: 0.2s; }
+        button:hover { background-color: #0f2b4f; }
+        .question-card { background: #f9fafc; border-radius: 20px; padding: 20px; margin-bottom: 20px; border-left: 5px solid #1a3e6f; }
+        .enunciado { font-size: 1.2rem; margin-bottom: 20px; font-weight: 500; }
+        .opciones label { display: block; margin: 12px 0; font-weight: normal; cursor: pointer; }
+        .opciones input { width: auto; margin-right: 10px; }
+        .nav-buttons { display: flex; justify-content: space-between; margin-top: 25px; gap: 15px; }
+        .nav-buttons button { width: auto; padding: 10px 20px; }
+        .timer { font-size: 1.8rem; font-weight: bold; text-align: center; background: #e9ecef; padding: 10px; border-radius: 50px; margin-bottom: 20px; font-family: monospace; }
+        .progress { text-align: center; margin-bottom: 15px; color: #555; }
+        .result-card { background: #e9f5e9; padding: 15px; border-radius: 15px; margin-bottom: 20px; }
+        .career-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .career-table th, .career-table td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        .career-table th { background: #1a3e6f; color: white; }
+        .alcanza { background-color: #d4edda; color: #155724; }
+        .no-alcanza { background-color: #f8d7da; color: #721c24; }
+        .failed-topics { background: #fff3cd; padding: 10px; border-radius: 10px; margin: 15px 0; }
+        footer { text-align: center; margin-top: 30px; font-size: 0.8rem; color: gray; }
+        @media (max-width: 600px) { .container { padding: 15px; } .enunciado { font-size: 1rem; } }
+        .loader { text-align: center; padding: 40px; font-size: 1.2rem; }
+        .error { background: #f8d7da; color: #721c24; padding: 15px; border-radius: 10px; margin: 15px 0; }
+    </style>
+</head>
+<body>
+<div class="container" id="app">
+    <h1>📘 Simulador Examen ESPE</h1>
+    <h3>Grupo D - Ingenierías y Carreras Técnicas</h3>
+
+    <div id="loader-global" class="loader" style="display: none;">Cargando datos...</div>
+    <div id="error-global" class="error" style="display: none;"></div>
+
+    <!-- PASO 1: Datos del estudiante -->
+    <div id="step-login" class="step active">
+        <div class="form-group">
+            <label>Código de 10 dígitos (proporcionado por el centro):</label>
+            <input type="text" id="codigo" maxlength="10" placeholder="Ej: 1111111111">
+        </div>
+        <div class="form-group">
+            <label>Nota del colegio (sobre 10):</label>
+            <input type="number" id="nota-colegio" step="0.01" value="9.2" placeholder="Ej: 9.2">
+        </div>
+        <button id="btn-login">Continuar</button>
+    </div>
+
+    <!-- PASO 2: Selección de modo -->
+    <div id="step-seleccion" class="step">
+        <p>✅ Código válido: <span id="codigo-mostrado"></span></p>
+        <p>📚 Nota colegio: <span id="nota-mostrada"></span> / 10</p>
+        <div class="form-group">
+            <label>Selecciona el modo de examen:</label>
+            <select id="modo-select">
+                <option value="rapido">⚡ Rápido - 20 preguntas (sin tiempo)</option>
+                <option value="real">⏱️ Real - 30 preguntas (90 minutos)</option>
+            </select>
+        </div>
+        <button id="btn-iniciar">Comenzar examen</button>
+    </div>
+
+    <!-- PASO 3: Examen -->
+    <div id="step-examen" class="step">
+        <div id="timer-display" class="timer" style="display: none;">01:30:00</div>
+        <div class="progress" id="progreso"></div>
+        <div id="pregunta-container"></div>
+        <div class="nav-buttons">
+            <button id="btn-anterior" style="background:#6c757d;">◀ Anterior</button>
+            <button id="btn-siguiente">Siguiente ▶</button>
+            <button id="btn-finalizar" style="background:#dc3545;">Finalizar</button>
+        </div>
+    </div>
+
+    <!-- PASO 4: Resultados -->
+    <div id="step-resultados" class="step">
+        <div id="resultado-contenido"></div>
+        <button id="btn-reiniciar">🔄 Realizar otro examen</button>
+    </div>
+</div>
+<footer>Simulador oficial ESPE - Basado en temario SII 2023 Grupo D</footer>
+
+<script>
+    // ----------------------------
+    // 1. Variables globales
+    // ----------------------------
+    let config = null;
+    let carreras = null;
+    let algebraQuestions = [];
+    let fisicaQuestions = [];
+    let usuariosValidos = [];
+
+    let datosCargados = false;
+    let codigoActual = "";
+    let notaColegio = 0;
+    let modoActual = "rapido";
+    let preguntasExamen = [];
+    let respuestasUsuario = [];
+    let preguntaActualIndex = 0;
+    let temporizadorInterval = null;
+    let tiempoRestanteSegundos = 0;
+    let examenFinalizado = false;
+
+    // Elementos DOM
+    const stepLogin = document.getElementById('step-login');
+    const stepSeleccion = document.getElementById('step-seleccion');
+    const stepExamen = document.getElementById('step-examen');
+    const stepResultados = document.getElementById('step-resultados');
+    const loaderDiv = document.getElementById('loader-global');
+    const errorDiv = document.getElementById('error-global');
+    const btnLogin = document.getElementById('btn-login');
+    const btnIniciar = document.getElementById('btn-iniciar');
+    const btnAnterior = document.getElementById('btn-anterior');
+    const btnSiguiente = document.getElementById('btn-siguiente');
+    const btnFinalizar = document.getElementById('btn-finalizar');
+    const btnReiniciar = document.getElementById('btn-reiniciar');
+    const codigoInput = document.getElementById('codigo');
+    const notaColegioInput = document.getElementById('nota-colegio');
+    const modoSelect = document.getElementById('modo-select');
+    const codigoMostrado = document.getElementById('codigo-mostrado');
+    const notaMostrada = document.getElementById('nota-mostrada');
+    const timerDisplay = document.getElementById('timer-display');
+    const progresoDiv = document.getElementById('progreso');
+    const preguntaContainer = document.getElementById('pregunta-container');
+
+    // ----------------------------
+    // 2. Carga de archivos JSON externos (incluye usuarios)
+    // ----------------------------
+    async function cargarTodosLosDatos() {
+        mostrarLoader(true);
+        ocultarError();
+        try {
+            const [configResp, carrerasResp, algebraResp, fisicaResp, usuariosResp] = await Promise.all([
+                fetch('data/config.json'),
+                fetch('data/carreras.json'),
+                fetch('data/algebra_preguntas.json'),
+                fetch('data/fisica_preguntas.json'),
+                fetch('data/usuarios.json')
+            ]);
+            if (!configResp.ok) throw new Error('No se pudo cargar config.json');
+            if (!carrerasResp.ok) throw new Error('No se pudo cargar carreras.json');
+            if (!algebraResp.ok) throw new Error('No se pudo cargar algebra_preguntas.json');
+            if (!fisicaResp.ok) throw new Error('No se pudo cargar fisica_preguntas.json');
+            if (!usuariosResp.ok) throw new Error('No se pudo cargar usuarios.json');
+
+            config = await configResp.json();
+            carreras = await carrerasResp.json();
+            algebraQuestions = await algebraResp.json();
+            fisicaQuestions = await fisicaResp.json();
+            const usuariosData = await usuariosResp.json();
+            usuariosValidos = usuariosData.usuarios || [];
+
+            // Validaciones mínimas
+            if (!config || !config.modos || !config.ponderaciones) throw new Error('config.json inválido');
+            if (!carreras || !carreras.carreras) throw new Error('carreras.json inválido');
+            if (!Array.isArray(algebraQuestions) || algebraQuestions.length === 0) throw new Error('algebra_preguntas.json vacío o inválido');
+            if (!Array.isArray(fisicaQuestions) || fisicaQuestions.length === 0) throw new Error('fisica_preguntas.json vacío o inválido');
+            if (!Array.isArray(usuariosValidos) || usuariosValidos.length === 0) throw new Error('usuarios.json debe contener al menos un código');
+
+            datosCargados = true;
+            mostrarLoader(false);
+        } catch (err) {
+            mostrarLoader(false);
+            mostrarError(err.message);
+            console.error(err);
+        }
+    }
+
+    function mostrarLoader(show) {
+        loaderDiv.style.display = show ? 'block' : 'none';
+    }
+    function mostrarError(msg) {
+        errorDiv.style.display = 'block';
+        errorDiv.innerText = msg;
+    }
+    function ocultarError() {
+        errorDiv.style.display = 'none';
+    }
+
+    // ----------------------------
+    // 3. Utilidades
+    // ----------------------------
+    function mostrarPaso(pasoId) {
+        stepLogin.classList.remove('active');
+        stepSeleccion.classList.remove('active');
+        stepExamen.classList.remove('active');
+        stepResultados.classList.remove('active');
+        document.getElementById(pasoId).classList.add('active');
+    }
+
+    function validarCodigo(cod) {
+        return /^\d{10}$/.test(cod) && usuariosValidos.includes(cod);
+    }
+
+    function seleccionarAleatorias(arr, n) {
+        if (n > arr.length) n = arr.length;
+        const shuffled = [...arr];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        return shuffled.slice(0, n);
+    }
+
+    function generarExamen() {
+        const numAlg = config.modos[modoActual].algebra;
+        const numFis = config.modos[modoActual].fisica;
+        const pregAlg = seleccionarAleatorias(algebraQuestions, numAlg);
+        const pregFis = seleccionarAleatorias(fisicaQuestions, numFis);
+        let todas = [...pregAlg, ...pregFis];
+        // Mezclar orden final
+        for (let i = todas.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [todas[i], todas[j]] = [todas[j], todas[i]];
+        }
+        return todas;
+    }
+
+    function iniciarTemporizador(minutos) {
+        if (temporizadorInterval) clearInterval(temporizadorInterval);
+        tiempoRestanteSegundos = minutos * 60;
+        actualizarDisplayTiempo();
+        temporizadorInterval = setInterval(() => {
+            if (examenFinalizado) return;
+            if (tiempoRestanteSegundos <= 0) {
+                clearInterval(temporizadorInterval);
+                alert("⏰ Tiempo agotado. El examen se finalizará automáticamente.");
+                finalizarExamen();
+            } else {
+                tiempoRestanteSegundos--;
+                actualizarDisplayTiempo();
+            }
+        }, 1000);
+    }
+
+    function actualizarDisplayTiempo() {
+        const mins = Math.floor(tiempoRestanteSegundos / 60);
+        const segs = tiempoRestanteSegundos % 60;
+        timerDisplay.textContent = `${mins.toString().padStart(2,'0')}:${segs.toString().padStart(2,'0')}`;
+    }
+
+    function renderizarPregunta() {
+        if (!preguntasExamen.length) return;
+        const p = preguntasExamen[preguntaActualIndex];
+        const respuestaGuardada = respuestasUsuario[preguntaActualIndex];
+        let html = `<div class="question-card"><div class="enunciado">${p.enunciado}</div><div class="opciones">`;
+        if (p.opciones && Array.isArray(p.opciones)) {
+            p.opciones.forEach((opt, idx) => {
+                const checked = (respuestaGuardada === idx) ? 'checked' : '';
+                html += `<label><input type="radio" name="opcion" value="${idx}" ${checked}> ${opt}</label>`;
+            });
+        } else {
+            html += `<p>Formato de pregunta no soportado.</p>`;
+        }
+        html += `</div></div>`;
+        preguntaContainer.innerHTML = html;
+
+        if (window.renderMathInElement) {
+            window.renderMathInElement(preguntaContainer, {
+                delimiters: [
+                    {left: '\\\\(', right: '\\\\)', display: false},
+                    {left: '\\\\[', right: '\\\\]', display: true}
+                ]
+            });
+        }
+        progresoDiv.innerHTML = `Pregunta ${preguntaActualIndex+1} de ${preguntasExamen.length}`;
+    }
+
+    function guardarRespuestaActual() {
+        const selected = document.querySelector('input[name="opcion"]:checked');
+        if (selected) {
+            respuestasUsuario[preguntaActualIndex] = parseInt(selected.value);
+        } else {
+            respuestasUsuario[preguntaActualIndex] = null;
+        }
+    }
+
+    function finalizarExamen() {
+        if (examenFinalizado) return;
+        examenFinalizado = true;
+        if (temporizadorInterval) clearInterval(temporizadorInterval);
+        guardarRespuestaActual();
+
+        let aciertos = 0;
+        const respuestasDetalle = [];
+        for (let i = 0; i < preguntasExamen.length; i++) {
+            const userAns = respuestasUsuario[i];
+            const correct = preguntasExamen[i].respuesta_correcta;
+            const isCorrect = (userAns !== null && userAns === correct);
+            if (isCorrect) aciertos++;
+            respuestasDetalle.push({
+                pregunta: preguntasExamen[i],
+                userAnswer: userAns,
+                isCorrect: isCorrect
+            });
+        }
+
+        const totalPreguntas = preguntasExamen.length;
+        const notaExamenSobre100 = (aciertos / totalPreguntas) * 100;
+        const notaColegioSobre100 = (notaColegio / config.escala_colegio) * 100;
+        const examenPorc = config.ponderaciones.examen_porcentaje / 100;
+        const colegioPorc = config.ponderaciones.colegio_porcentaje / 100;
+        const notaFinalSobre100 = (notaExamenSobre100 * examenPorc) + (notaColegioSobre100 * colegioPorc);
+        const notaFinalSobre1000 = notaFinalSobre100 * (config.ponderaciones.puntaje_total_escala / 100);
+
+        const temasFallados = new Set();
+        respuestasDetalle.forEach(det => {
+            if (!det.isCorrect) {
+                temasFallados.add(det.pregunta.subtema);
+            }
+        });
+
+        const umbralCarreras = carreras.carreras.map(carr => {
+            const puntajeMin100 = carr.puntaje_minimo;
+            const puntajeMin1000 = puntajeMin100 * (config.ponderaciones.puntaje_total_escala / 100);
+            return {
+                nombre: carr.nombre,
+                puntajeMinimoOriginal: puntajeMin100,
+                puntajeMinimo1000: puntajeMin1000,
+                alcanza: notaFinalSobre1000 >= puntajeMin1000
+            };
+        });
+
+        mostrarResultados(notaFinalSobre1000, notaExamenSobre100, aciertos, totalPreguntas, temasFallados, umbralCarreras);
+        mostrarPaso('step-resultados');
+    }
+
+    function mostrarResultados(notaFinal1000, notaExamen100, aciertos, total, temasFallados, carrerasConUmbral) {
+        const container = document.getElementById('resultado-contenido');
+        let html = `
+            <div class="result-card">
+                <h2>📊 Tu puntuación final</h2>
+                <p><strong>${notaFinal1000.toFixed(2)}</strong> / ${config.ponderaciones.puntaje_total_escala} puntos</p>
+                <p>🔍 Examen: ${aciertos}/${total} aciertos (${notaExamen100.toFixed(2)} sobre 100)<br>
+                📖 Nota colegio: ${notaColegio} / ${config.escala_colegio}</p>
+                <p>⚙️ Ponderación: ${config.ponderaciones.examen_porcentaje}% examen + ${config.ponderaciones.colegio_porcentaje}% colegio</p>
+            </div>
+        `;
+        if (temasFallados.size > 0) {
+            html += `<div class="failed-topics"><strong>📌 Temas a reforzar (preguntas falladas):</strong><br>${Array.from(temasFallados).join(', ')}</div>`;
+        } else {
+            html += `<div class="failed-topics"><strong>🎉 ¡Excelente! No fallaste ningún tema.</strong></div>`;
+        }
+        html += `<h3>🎓 Carreras del Grupo D - Puntajes mínimos (escala ${config.ponderaciones.puntaje_total_escala})</h3>
+                 <table class="career-table"><tr><th>Carrera</th><th>Puntaje mínimo</th><th>¿Alcanzas?</th></tr>`;
+        carrerasConUmbral.forEach(c => {
+            const clase = c.alcanza ? 'alcanza' : 'no-alcanza';
+            html += `<tr class="${clase}"><td>${c.nombre}</td><td>${c.puntajeMinimo1000.toFixed(0)}</td><td>${c.alcanza ? '✅ Sí' : '❌ No'}</td></tr>`;
+        });
+        html += `</table>`;
+        container.innerHTML = html;
+    }
+
+    function reiniciarSimulador() {
+        if (temporizadorInterval) clearInterval(temporizadorInterval);
+        examenFinalizado = false;
+        codigoActual = "";
+        notaColegio = 0;
+        preguntasExamen = [];
+        respuestasUsuario = [];
+        preguntaActualIndex = 0;
+        codigoInput.value = "";
+        notaColegioInput.value = "9.2";
+        modoSelect.value = "rapido";
+        mostrarPaso('step-login');
+    }
+
+    // ----------------------------
+    // 4. Eventos
+    // ----------------------------
+    btnLogin.addEventListener('click', () => {
+        if (!datosCargados) {
+            alert("Los datos aún se están cargando. Espera un momento.");
+            return;
+        }
+        const cod = codigoInput.value.trim();
+        const nota = parseFloat(notaColegioInput.value);
+        if (!validarCodigo(cod)) {
+            alert("Código inválido. Debe ser un código de 10 dígitos autorizado por el centro.");
+            return;
+        }
+        if (isNaN(nota) || nota < 0 || nota > config.escala_colegio) {
+            alert(`La nota del colegio debe ser un número entre 0 y ${config.escala_colegio}.`);
+            return;
+        }
+        codigoActual = cod;
+        notaColegio = nota;
+        codigoMostrado.innerText = codigoActual;
+        notaMostrada.innerText = notaColegio;
+        mostrarPaso('step-seleccion');
+    });
+
+    btnIniciar.addEventListener('click', () => {
+        modoActual = modoSelect.value;
+        if (!datosCargados) {
+            alert("Aún no se han cargado los datos. Espera unos segundos.");
+            return;
+        }
+        preguntasExamen = generarExamen();
+        respuestasUsuario = new Array(preguntasExamen.length).fill(null);
+        preguntaActualIndex = 0;
+        examenFinalizado = false;
+
+        if (modoActual === 'real') {
+            timerDisplay.style.display = 'block';
+            iniciarTemporizador(config.tiempo_real_minutos);
+        } else {
+            timerDisplay.style.display = 'none';
+            if (temporizadorInterval) clearInterval(temporizadorInterval);
+        }
+        renderizarPregunta();
+        mostrarPaso('step-examen');
+    });
+
+    btnSiguiente.addEventListener('click', () => {
+        guardarRespuestaActual();
+        if (preguntaActualIndex + 1 < preguntasExamen.length) {
+            preguntaActualIndex++;
+            renderizarPregunta();
+        } else {
+            if (confirm("Has llegado a la última pregunta. ¿Deseas finalizar el examen?")) {
+                finalizarExamen();
+            }
+        }
+    });
+
+    btnAnterior.addEventListener('click', () => {
+        guardarRespuestaActual();
+        if (preguntaActualIndex > 0) {
+            preguntaActualIndex--;
+            renderizarPregunta();
+        }
+    });
+
+    btnFinalizar.addEventListener('click', () => {
+        if (confirm("¿Estás seguro de que deseas finalizar el examen? Se guardarán tus respuestas actuales.")) {
+            finalizarExamen();
+        }
+    });
+
+    btnReiniciar.addEventListener('click', () => {
+        reiniciarSimulador();
+    });
+
+    // Cargar datos al inicio
+    cargarTodosLosDatos();
+</script>
+</body>
+</html>
