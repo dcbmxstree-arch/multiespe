@@ -1,0 +1,21 @@
+{
+  "grupo": "D",
+  "carreras": [
+    { "nombre": "Ingeniería Civil", "puntaje_minimo": 70 },
+    { "nombre": "Ingeniería Mecánica", "puntaje_minimo": 68 },
+    { "nombre": "Ingeniería Electromecánica", "puntaje_minimo": 65 },
+    { "nombre": "Ingeniería Electrónica y Automatización", "puntaje_minimo": 66 },
+    { "nombre": "Ingeniería Automotriz", "puntaje_minimo": 67 },
+    { "nombre": "Ingeniería Mecatrónica", "puntaje_minimo": 72 },
+    { "nombre": "Ingeniería Geoespacial", "puntaje_minimo": 64 },
+    { "nombre": "Tecnologías de la Información", "puntaje_minimo": 68 },
+    { "nombre": "Ingeniería Petroquímica", "puntaje_minimo": 69 },
+    { "nombre": "Ingeniería en Software", "puntaje_minimo": 75 },
+    { "nombre": "Ingeniería en Telecomunicaciones", "puntaje_minimo": 70 },
+    { "nombre": "Tecnología Superior en Electromecánica", "puntaje_minimo": 60 },
+    { "nombre": "Tecnología Superior en Automatización e Instrumentación", "puntaje_minimo": 61 },
+    { "nombre": "Tecnología Superior en Mecánica Aeronáutica", "puntaje_minimo": 62 },
+    { "nombre": "Tecnología Superior en Mecánica Automotriz", "puntaje_minimo": 60 },
+    { "nombre": "Tecnología Superior en Redes y Telecomunicaciones", "puntaje_minimo": 63 }
+  ]
+}

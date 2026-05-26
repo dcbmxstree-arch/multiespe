@@ -1,0 +1,557 @@
+[
+  {
+    "id": "FIS-CAN-01",
+    "subtema": "Cantidades físicas",
+    "enunciado": "Convierte 72 km/h a m/s.",
+    "opciones": ["20 m/s", "25.9 m/s", "15 m/s", "30 m/s"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "72 ÷ 3.6 = 20 m/s.",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-CAN-02",
+    "subtema": "Cantidades físicas",
+    "enunciado": "¿Cuántos gramos hay en 2.5 kg?",
+    "opciones": ["250 g", "2500 g", "25 g", "0.0025 g"],
+    "respuesta_correcta": 1,
+    "tipo": "multiple",
+    "explicacion": "1 kg = 1000 g, entonces 2.5 kg = 2500 g.",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-CAN-03",
+    "subtema": "Cantidades físicas",
+    "enunciado": "La rapidez de la luz es aproximadamente \\( 3 \\times 10^8 \\, \\text{m/s} \\). Exprésala en km/s.",
+    "opciones": [
+      "\\( 3 \\times 10^5 \\, \\text{km/s} \\)",
+      "\\( 3 \\times 10^2 \\, \\text{km/s} \\)",
+      "\\( 3 \\times 10^8 \\, \\text{km/s} \\)",
+      "\\( 3 \\times 10^3 \\, \\text{km/s} \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "1 km = 1000 m, entonces \\( 3\\times10^8 \\, \\text{m/s} = 3\\times10^5 \\, \\text{km/s} \\).",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-CAN-04",
+    "subtema": "Cantidades físicas",
+    "enunciado": "Determina el número de cifras significativas en 0.004050.",
+    "opciones": ["4", "5", "3", "6"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Los ceros a la izquierda no cuentan, pero los interiores y finales sí: 4,0,5,0 → 4 cifras significativas.",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-CAN-05",
+    "subtema": "Cantidades físicas",
+    "enunciado": "¿Cuál de las siguientes es una unidad derivada en el SI?",
+    "opciones": ["Metro", "Segundo", "Newton", "Kilogramo"],
+    "respuesta_correcta": 2,
+    "tipo": "multiple",
+    "explicacion": "Newton = kg·m/s², es una unidad derivada. Las otras son básicas.",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-CAN-06",
+    "subtema": "Cantidades físicas",
+    "enunciado": "Convierte 100 °F a °C.",
+    "opciones": ["37.78 °C", "212 °C", "32 °C", "100 °C"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "\\( C = \\frac{5}{9}(F-32) = \\frac{5}{9}(68) \\approx 37.78 \\).",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-CAN-07",
+    "subtema": "Cantidades físicas",
+    "enunciado": "La densidad del agua es 1 g/cm³. Exprésala en kg/m³.",
+    "opciones": ["1000 kg/m³", "1 kg/m³", "10 kg/m³", "0.001 kg/m³"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "1 g/cm³ = 1000 kg/m³.",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-CAN-08",
+    "subtema": "Cantidades físicas",
+    "enunciado": "Realiza el análisis dimensional de la velocidad.",
+    "opciones": ["LT⁻¹", "LT⁻²", "L²T⁻¹", "MLT⁻¹"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Velocidad = distancia/tiempo → dimensiones L/T = LT⁻¹.",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-CAN-09",
+    "subtema": "Cantidades físicas",
+    "enunciado": "Un automóvil recorre 150 km en 2.5 horas. Calcula su rapidez media en m/s.",
+    "opciones": ["16.67 m/s", "60 m/s", "37.5 m/s", "25 m/s"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "150 km = 150000 m, 2.5 h = 9000 s, rapidez = 150000/9000 ≈ 16.67 m/s.",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-CAN-10",
+    "subtema": "Cantidades físicas",
+    "enunciado": "Redondea 2.3456 a tres cifras significativas.",
+    "opciones": ["2.35", "2.34", "2.346", "2.3"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Tres cifras significativas: 2.35 (porque la cuarta cifra es 5 o mayor).",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-VEC-01",
+    "subtema": "Vectores en el espacio",
+    "enunciado": "Dados los vectores \\( \\vec{A} = (3,4) \\) y \\( \\vec{B} = (1,2) \\), halla \\( \\vec{A} + \\vec{B} \\).",
+    "opciones": [
+      "\\( (4,6) \\)",
+      "\\( (2,2) \\)",
+      "\\( (5,6) \\)",
+      "\\( (3,8) \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Suma componente a componente: (3+1, 4+2) = (4,6).",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-VEC-02",
+    "subtema": "Vectores en el espacio",
+    "enunciado": "Calcula el producto escalar de \\( \\vec{A} = (2, -1, 3) \\) y \\( \\vec{B} = (4, 0, -2) \\).",
+    "opciones": ["2", "0", "8", "10"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "\\( 2\\cdot4 + (-1)\\cdot0 + 3\\cdot(-2) = 8 + 0 -6 = 2 \\).",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-VEC-03",
+    "subtema": "Vectores en el espacio",
+    "enunciado": "Halla la magnitud del vector \\( \\vec{V} = (-3, 4) \\).",
+    "opciones": ["5", "7", "1", "25"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "\\( \\sqrt{(-3)^2 + 4^2} = \\sqrt{9+16} = \\sqrt{25} = 5 \\).",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-VEC-04",
+    "subtema": "Vectores en el espacio",
+    "enunciado": "Dados \\( \\vec{A} = (1,2,2) \\) y \\( \\vec{B} = (2,1,-1) \\), halla el producto vectorial \\( \\vec{A} \\times \\vec{B} \\).",
+    "opciones": [
+      "\\( (-4, 5, -3) \\)",
+      "\\( (4, -5, 3) \\)",
+      "\\( (0, 3, -5) \\)",
+      "\\( (-3, 4, -5) \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Determinante: i(2·(-1)-2·1) - j(1·(-1)-2·2) + k(1·1-2·2) = i(-2-2) - j(-1-4) + k(1-4) = (-4, 5, -3).",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-VEC-05",
+    "subtema": "Vectores en el espacio",
+    "enunciado": "Un vector tiene magnitud 10 y forma un ángulo de 60° con el eje x. Determina sus componentes.",
+    "opciones": [
+      "\\( (5, 5\\sqrt{3}) \\)",
+      "\\( (5\\sqrt{3}, 5) \\)",
+      "\\( (10, 0) \\)",
+      "\\( (0, 10) \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "\\( v_x = 10\\cos60° = 5 \\), \\( v_y = 10\\sin60° = 5\\sqrt{3} \\).",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-VEC-06",
+    "subtema": "Vectores en el espacio",
+    "enunciado": "Si \\( \\vec{A} \\cdot \\vec{B} = 0 \\), ¿qué se puede concluir?",
+    "opciones": [
+      "Son ortogonales",
+      "Son paralelos",
+      "Tienen la misma magnitud",
+      "Uno es múltiplo del otro"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Producto escalar cero → vectores perpendiculares (ortogonales).",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-VEC-07",
+    "subtema": "Vectores en el espacio",
+    "enunciado": "Halla el vector unitario en la dirección de \\( \\vec{u} = (1,2,2) \\).",
+    "opciones": [
+      "\\( \\left(\\frac{1}{3}, \\frac{2}{3}, \\frac{2}{3}\\right) \\)",
+      "\\( \\left(\\frac{1}{\\sqrt{5}}, \\frac{2}{\\sqrt{5}}, 0\\right) \\)",
+      "\\( (1,2,2) \\)",
+      "\\( \\left(\\frac{1}{\\sqrt{2}}, \\frac{1}{\\sqrt{2}}, 0\\right) \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Magnitud = \\( \\sqrt{1+4+4} = 3 \\). Unitario = (1/3, 2/3, 2/3).",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-VEC-08",
+    "subtema": "Vectores en el espacio",
+    "enunciado": "Dos vectores \\( \\vec{A} \\) y \\( \\vec{B} \\) tienen magnitudes 6 y 8, y el ángulo entre ellos es 90°. Halla la magnitud de su suma.",
+    "opciones": ["10", "14", "2", "100"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Teorema de Pitágoras: \\( \\sqrt{6^2+8^2} = \\sqrt{36+64}=10 \\).",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-VEC-09",
+    "subtema": "Vectores en el espacio",
+    "enunciado": "Dado \\( \\vec{V} = (2, -3, 5) \\), calcula \\( -2\\vec{V} \\).",
+    "opciones": [
+      "\\( (-4, 6, -10) \\)",
+      "\\( (4, -6, 10) \\)",
+      "\\( (-1, 1.5, -2.5) \\)",
+      "\\( (0, 0, 0) \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Multiplicar cada componente por -2: (-4, 6, -10).",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-VEC-10",
+    "subtema": "Vectores en el espacio",
+    "enunciado": "Encuentra el ángulo entre los vectores \\( \\vec{A} = (1,0,1) \\) y \\( \\vec{B} = (0,1,1) \\).",
+    "opciones": ["60°", "90°", "45°", "30°"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "\\( \\cos\\theta = \\frac{0+0+1}{\\sqrt{2}\\sqrt{2}} = \\frac{1}{2} \\), entonces \\( \\theta = 60° \\).",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-CIN-01",
+    "subtema": "Cinemática de la partícula",
+    "enunciado": "Un auto viaja a velocidad constante de 20 m/s. ¿Qué distancia recorre en 15 segundos?",
+    "opciones": ["300 m", "1.33 m", "35 m", "300 km"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "d = v·t = 20·15 = 300 m.",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-CIN-02",
+    "subtema": "Cinemática de la partícula",
+    "enunciado": "Un objeto parte del reposo con aceleración constante de 2 m/s². ¿Cuál es su velocidad a los 5 segundos?",
+    "opciones": ["10 m/s", "2.5 m/s", "25 m/s", "0 m/s"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "v = v₀ + at = 0 + 2·5 = 10 m/s.",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-CIN-03",
+    "subtema": "Cinemática de la partícula",
+    "enunciado": "Se lanza una piedra verticalmente hacia arriba con velocidad inicial 20 m/s. ¿Cuál es la altura máxima? (g=10 m/s²)",
+    "opciones": ["20 m", "40 m", "10 m", "80 m"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "v² = v₀² - 2gh → 0 = 400 - 20h → h = 20 m.",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-CIN-04",
+    "subtema": "Cinemática de la partícula",
+    "enunciado": "Un móvil tiene velocidad inicial 5 m/s y aceleración 3 m/s² durante 4 s. Calcula el desplazamiento.",
+    "opciones": ["44 m", "20 m", "68 m", "32 m"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "x = v₀t + ½at² = 5·4 + 0.5·3·16 = 20 + 24 = 44 m.",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-CIN-05",
+    "subtema": "Cinemática de la partícula",
+    "enunciado": "Un proyectil se lanza horizontalmente desde una altura de 45 m con velocidad 10 m/s. ¿Cuánto tarda en caer? (g=10 m/s²)",
+    "opciones": ["3 s", "4.5 s", "2 s", "1.5 s"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "h = ½gt² → 45 = 5t² → t² = 9 → t = 3 s.",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-CIN-06",
+    "subtema": "Cinemática de la partícula",
+    "enunciado": "Una rueda de 0.5 m de radio gira con velocidad angular constante de 10 rad/s. Halla la velocidad lineal de un punto en el borde.",
+    "opciones": ["5 m/s", "0.5 m/s", "20 m/s", "10 m/s"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "v = ω·r = 10·0.5 = 5 m/s.",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-CIN-07",
+    "subtema": "Cinemática de la partícula",
+    "enunciado": "Un auto frena desde 30 m/s hasta detenerse en 6 s. Calcula la aceleración (supuesta constante).",
+    "opciones": ["-5 m/s²", "5 m/s²", "-6 m/s²", "6 m/s²"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "a = (v_f - v₀)/t = (0-30)/6 = -5 m/s².",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-CIN-08",
+    "subtema": "Cinemática de la partícula",
+    "enunciado": "En el movimiento circular uniforme, ¿cuál de las siguientes magnitudes es constante?",
+    "opciones": [
+      "Velocidad lineal",
+      "Aceleración centrípeta",
+      "Velocidad angular",
+      "Fuerza neta"
+    ],
+    "respuesta_correcta": 2,
+    "tipo": "multiple",
+    "explicacion": "En MCU, la velocidad angular es constante; la velocidad lineal cambia en dirección.",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-CIN-09",
+    "subtema": "Cinemática de la partícula",
+    "enunciado": "Un ciclista parte del reposo y acelera uniformemente a 1.2 m/s² durante 10 s. ¿Qué distancia recorrió?",
+    "opciones": ["60 m", "12 m", "120 m", "30 m"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "d = ½·1.2·100 = 60 m.",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-CIN-10",
+    "subtema": "Cinemática de la partícula",
+    "enunciado": "Una partícula describe un MCUV con ω₀=2 rad/s, α=0.5 rad/s². Halla ω después de 4 s.",
+    "opciones": ["4 rad/s", "2.5 rad/s", "6 rad/s", "8 rad/s"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "ω = ω₀ + αt = 2 + 0.5·4 = 4 rad/s.",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-DIN-01",
+    "subtema": "Dinámica de la partícula",
+    "enunciado": "Una masa de 5 kg experimenta una fuerza neta de 20 N. Calcula su aceleración.",
+    "opciones": ["4 m/s²", "100 m/s²", "0.25 m/s²", "25 m/s²"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "F = ma → a = F/m = 20/5 = 4 m/s².",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-DIN-02",
+    "subtema": "Dinámica de la partícula",
+    "enunciado": "¿Cuál es el peso de un objeto de 10 kg en la Tierra (g=9.8 m/s²)?",
+    "opciones": ["98 N", "10 N", "9.8 N", "100 N"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "P = mg = 10·9.8 = 98 N.",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-DIN-03",
+    "subtema": "Dinámica de la partícula",
+    "enunciado": "Se aplica una fuerza horizontal de 50 N a un bloque de 20 kg sobre una superficie sin rozamiento. Halla la aceleración.",
+    "opciones": ["2.5 m/s²", "0.4 m/s²", "1000 m/s²", "30 m/s²"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "a = F/m = 50/20 = 2.5 m/s².",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-DIN-04",
+    "subtema": "Dinámica de la partícula",
+    "enunciado": "Un cuerpo de 2 kg cuelga de una cuerda. ¿Cuál es la tensión si el sistema está en reposo?",
+    "opciones": ["19.6 N", "2 N", "0 N", "9.8 N"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "T = mg = 2·9.8 = 19.6 N.",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-DIN-05",
+    "subtema": "Dinámica de la partícula",
+    "enunciado": "Un auto de 1000 kg toma una curva de radio 50 m con velocidad constante de 20 m/s. ¿Cuál es la fuerza centrípeta?",
+    "opciones": ["8000 N", "400 N", "20000 N", "1000 N"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Fc = mv²/r = 1000·400/50 = 8000 N.",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-DIN-06",
+    "subtema": "Dinámica de la partícula",
+    "enunciado": "Calcula el momento de una fuerza de 15 N aplicada perpendicularmente a una distancia de 0.4 m del eje.",
+    "opciones": ["6 N·m", "37.5 N·m", "0.0267 N·m", "60 N·m"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "τ = F·d = 15·0.4 = 6 N·m.",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-DIN-07",
+    "subtema": "Dinámica de la partícula",
+    "enunciado": "Un bloque de 5 kg se desliza sobre una superficie horizontal con coeficiente de rozamiento cinético 0.2. Halla la fuerza de rozamiento (g=10 m/s²).",
+    "opciones": ["10 N", "1 N", "5 N", "25 N"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "F_r = μ·N = 0.2·(5·10) = 0.2·50 = 10 N.",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-DIN-08",
+    "subtema": "Dinámica de la partícula",
+    "enunciado": "Según la tercera ley de Newton, si la Tierra atrae a la Luna con una fuerza F, la Luna atrae a la Tierra con una fuerza:",
+    "opciones": [
+      "F, en la misma dirección y sentido opuesto",
+      "F, en la misma dirección y sentido",
+      "Mucho menor que F",
+      "Nula"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Tercera ley: acción y reacción son iguales en magnitud y opuestas en dirección.",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-DIN-09",
+    "subtema": "Dinámica de la partícula",
+    "enunciado": "Un objeto de 4 kg está en caída libre. ¿Qué fuerza neta actúa sobre él? (g=10 m/s², despreciando resistencia del aire)",
+    "opciones": ["40 N", "4 N", "0 N", "10 N"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "F = mg = 40 N hacia abajo.",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-DIN-10",
+    "subtema": "Dinámica de la partícula",
+    "enunciado": "Un ascensor con masa 500 kg sube con aceleración 2 m/s². ¿Cuál es la tensión del cable? (g=10 m/s²)",
+    "opciones": ["6000 N", "5000 N", "4000 N", "1000 N"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "T - mg = ma → T = m(g+a) = 500·12 = 6000 N.",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-TRE-01",
+    "subtema": "Trabajo, potencia y energía",
+    "enunciado": "Calcula el trabajo realizado al desplazar un objeto 5 m con una fuerza constante de 10 N en la misma dirección del movimiento.",
+    "opciones": ["50 J", "15 J", "2 J", "0.5 J"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "W = F·d = 10·5 = 50 J.",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-TRE-02",
+    "subtema": "Trabajo, potencia y energía",
+    "enunciado": "¿Cuál es la energía cinética de un automóvil de 1000 kg que viaja a 20 m/s?",
+    "opciones": [
+      "200 kJ",
+      "10 kJ",
+      "400 kJ",
+      "20 kJ"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Ec = ½mv² = 0.5·1000·400 = 200000 J = 200 kJ.",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-TRE-03",
+    "subtema": "Trabajo, potencia y energía",
+    "enunciado": "Una grúa eleva una carga de 500 kg a 8 m de altura en 10 s. ¿Qué potencia desarrolla? (g=10 m/s²)",
+    "opciones": ["4000 W", "400 W", "40000 W", "40 W"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Trabajo = mgh = 500·10·8 = 40000 J. Potencia = trabajo/tiempo = 40000/10 = 4000 W.",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-TRE-04",
+    "subtema": "Trabajo, potencia y energía",
+    "enunciado": "Un resorte con constante k=200 N/m se comprime 0.1 m. Halla la energía potencial elástica almacenada.",
+    "opciones": ["1 J", "2 J", "0.5 J", "10 J"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Epe = ½kx² = 0.5·200·0.01 = 1 J.",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-TRE-05",
+    "subtema": "Trabajo, potencia y energía",
+    "enunciado": "Un objeto de 2 kg se deja caer desde 5 m de altura. ¿Con qué velocidad llega al suelo? (g=10 m/s², despreciar rozamiento)",
+    "opciones": ["10 m/s", "5 m/s", "7.07 m/s", "14.14 m/s"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Conservación energía: mgh = ½mv² → v = √(2gh)=√(2·10·5)=√100=10 m/s.",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-TRE-06",
+    "subtema": "Trabajo, potencia y energía",
+    "enunciado": "Una fuerza variable realiza un trabajo de 50 J sobre un objeto. Si el objeto tenía 10 J de energía cinética inicial, ¿cuál es su energía cinética final?",
+    "opciones": ["60 J", "40 J", "50 J", "5 J"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Teorema trabajo-energía: W = ΔEc → Ec_f = Ec_i + W = 10+50=60 J.",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-TRE-07",
+    "subtema": "Trabajo, potencia y energía",
+    "enunciado": "¿Cuál de las siguientes fuerzas es conservativa?",
+    "opciones": ["Fricción", "Peso", "Tensión de una cuerda", "Fuerza de un motor"],
+    "respuesta_correcta": 1,
+    "tipo": "multiple",
+    "explicacion": "El peso es conservativo; la fricción no.",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-TRE-08",
+    "subtema": "Trabajo, potencia y energía",
+    "enunciado": "Una máquina tiene una potencia de 500 W. ¿Cuánto trabajo realiza en 20 s?",
+    "opciones": ["10000 J", "25 J", "500 J", "1000 J"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "W = P·t = 500·20 = 10000 J.",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-TRE-09",
+    "subtema": "Trabajo, potencia y energía",
+    "enunciado": "Un bloque sube por un plano inclinado sin fricción. ¿Qué tipo de energía se conserva?",
+    "opciones": [
+      "Energía cinética",
+      "Energía potencial",
+      "Energía mecánica",
+      "Ninguna"
+    ],
+    "respuesta_correcta": 2,
+    "tipo": "multiple",
+    "explicacion": "Al no haber fricción, la energía mecánica (cinética + potencial) se conserva.",
+    "puntos": 1
+  },
+  {
+    "id": "FIS-TRE-10",
+    "subtema": "Trabajo, potencia y energía",
+    "enunciado": "Un martillo de 2 kg se mueve a 5 m/s y golpea un clavo. Si el clavo se hunde 2 cm, ¿cuál es la fuerza media ejercida? (suponiendo que toda la energía cinética se usa en el trabajo)",
+    "opciones": ["1250 N", "250 N", "500 N", "1000 N"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Ec = ½·2·25 = 25 J. W = F·d → 25 = F·0.02 → F = 1250 N.",
+    "puntos": 1
+  }
+]

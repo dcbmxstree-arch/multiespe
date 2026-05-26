@@ -1,0 +1,826 @@
+[
+  {
+    "id": "ALG-LOG-01",
+    "subtema": "Lógica matemática",
+    "enunciado": "Sea \\( p \\): “Estudia”, \\( q \\): “Aprueba”. ¿Cuál es la expresión simbólica de “Si estudia entonces aprueba, pero no estudia”?",
+    "opciones": [
+      "\\( (p \\rightarrow q) \\land \\neg p \\)",
+      "\\( (p \\rightarrow q) \\lor \\neg p \\)",
+      "\\( (p \\land q) \\rightarrow \\neg p \\)",
+      "\\( \\neg p \\rightarrow (p \\land q) \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "La frase 'Si estudia entonces aprueba' es \\( p \\rightarrow q \\); 'pero no estudia' es \\( \\neg p \\); la conjunción es \\( (p \\rightarrow q) \\land \\neg p \\).",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-LOG-02",
+    "subtema": "Lógica matemática",
+    "enunciado": "Determina cuál de las siguientes proposiciones es **equivalente** a \\( p \\rightarrow q \\)",
+    "opciones": [
+      "\\( \\neg q \\rightarrow \\neg p \\)",
+      "\\( q \\rightarrow p \\)",
+      "\\( \\neg p \\rightarrow \\neg q \\)",
+      "\\( p \\land \\neg q \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "La contrapositiva \\( \\neg q \\rightarrow \\neg p \\) es lógicamente equivalente a \\( p \\rightarrow q \\).",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-LOG-03",
+    "subtema": "Lógica matemática",
+    "enunciado": "Simplifica \\( (p \\lor q) \\land \\neg (\\neg p \\land q) \\)",
+    "opciones": [
+      "\\( p \\)",
+      "\\( q \\)",
+      "\\( p \\lor q \\)",
+      "\\( p \\land q \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Aplicando De Morgan: \\( \\neg (\\neg p \\land q) = p \\lor \\neg q \\). La expresión original es \\( (p \\lor q) \\land (p \\lor \\neg q) = p \\lor (q \\land \\neg q) = p \\).",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-LOG-04",
+    "subtema": "Lógica matemática",
+    "enunciado": "¿Cuál de las siguientes es una **contingencia**?",
+    "opciones": [
+      "\\( p \\rightarrow p \\)",
+      "\\( p \\lor \\neg p \\)",
+      "\\( p \\land \\neg p \\)",
+      "\\( p \\rightarrow (p \\land q) \\)"
+    ],
+    "respuesta_correcta": 3,
+    "tipo": "multiple",
+    "explicacion": "\\( p \\rightarrow (p \\land q) \\) es falsa cuando \\( p \\) es verdadero y \\( q \\) falso, verdadera en otros casos, por lo tanto contingencia.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-LOG-05",
+    "subtema": "Lógica matemática",
+    "enunciado": "La proposición \\( (p \\land q) \\rightarrow (p \\lor r) \\) es:",
+    "opciones": [
+      "Tautología",
+      "Contradicción",
+      "Contingencia",
+      "Equivalente a \\( p \\land q \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Si \\( p \\land q \\) es verdadero, entonces \\( p \\) es verdadero, luego \\( p \\lor r \\) es verdadero. Siempre es verdadera, tautología.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-LOG-06",
+    "subtema": "Lógica matemática",
+    "enunciado": "¿Cuál es la negación de \\( \\forall x (P(x) \\rightarrow Q(x)) \\)?",
+    "opciones": [
+      "\\( \\exists x (P(x) \\land \\neg Q(x)) \\)",
+      "\\( \\forall x (P(x) \\land \\neg Q(x)) \\)",
+      "\\( \\exists x (\\neg P(x) \\lor Q(x)) \\)",
+      "\\( \\forall x (\\neg P(x) \\lor Q(x)) \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "La negación de un condicional universal es la existencia de un contraejemplo: \\( \\neg \\forall x (P \\rightarrow Q) = \\exists x (P \\land \\neg Q) \\).",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-LOG-07",
+    "subtema": "Lógica matemática",
+    "enunciado": "Simplifica la expresión \\( (p \\rightarrow q) \\land (\\neg p \\rightarrow q) \\)",
+    "opciones": [
+      "\\( q \\)",
+      "\\( p \\)",
+      "\\( \\neg p \\)",
+      "\\( \\neg q \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "\\( (p \\rightarrow q) = \\neg p \\lor q \\), \\( (\\neg p \\rightarrow q) = p \\lor q \\). La conjunción es \\( (\\neg p \\lor q) \\land (p \\lor q) = q \\lor (\\neg p \\land p) = q \\).",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-LOG-08",
+    "subtema": "Lógica matemática",
+    "enunciado": "¿Cuál de las siguientes leyes permite transformar \\( \\neg (p \\lor q) \\) en \\( \\neg p \\land \\neg q \\)?",
+    "opciones": [
+      "Ley de identidad",
+      "Ley de De Morgan",
+      "Ley de absorción",
+      "Ley de distribución"
+    ],
+    "respuesta_correcta": 1,
+    "tipo": "multiple",
+    "explicacion": "Es una de las leyes de De Morgan para la disyunción.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-LOG-09",
+    "subtema": "Lógica matemática",
+    "enunciado": "Construye la tabla de verdad de \\( p \\leftrightarrow q \\) y determina cuándo es verdadera.",
+    "opciones": [
+      "Cuando ambos tienen el mismo valor de verdad",
+      "Cuando al menos uno es verdadero",
+      "Solo cuando ambos son falsos",
+      "Solo cuando ambos son verdaderos"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "El bicondicional es verdadero si \\( p \\) y \\( q \\) son ambos verdaderos o ambos falsos.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-LOG-10",
+    "subtema": "Lógica matemática",
+    "enunciado": "La proposición \\( (p \\lor q) \\land (\\neg p \\lor r) \\rightarrow (q \\lor r) \\) es:",
+    "opciones": [
+      "Tautología",
+      "Contradicción",
+      "Contingencia",
+      "Equivalente a \\( q \\lor r \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Corresponde a la regla de resolución, siempre verdadera. Es una tautología.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-CON-01",
+    "subtema": "Conjuntos",
+    "enunciado": "Sean \\( A = \\{x \\in \\mathbb{N} : x \\leq 10\\} \\), \\( B = \\{x \\in \\mathbb{N} : x \\text{ es par}\\} \\). Halla \\( A \\cap B \\)",
+    "opciones": [
+      "\\( \\{2,4,6,8,10\\} \\)",
+      "\\( \\{1,2,3,4,5,6,7,8,9,10\\} \\)",
+      "\\( \\{2,4,6,8\\} \\)",
+      "\\( \\{1,3,5,7,9\\} \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "A = {1,...,10}, B = números pares, la intersección son los pares hasta 10: {2,4,6,8,10}.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-CON-02",
+    "subtema": "Conjuntos",
+    "enunciado": "Si \\( U = \\{a,b,c,d,e\\} \\), \\( A = \\{a,c,e\\} \\), \\( B = \\{b,d\\} \\). Determina \\( A^c \\cup B \\)",
+    "opciones": [
+      "\\( \\{a,c,e\\} \\)",
+      "\\( \\{b,d\\} \\)",
+      "\\( \\{a,b,c,d,e\\} \\)",
+      "\\( \\{b,d,a,c,e\\} \\)"
+    ],
+    "respuesta_correcta": 3,
+    "tipo": "multiple",
+    "explicacion": "\\( A^c = \\{b,d\\} \\), entonces \\( A^c \\cup B = \\{b,d\\} \\cup \\{b,d\\} = \\{b,d\\} \\). La opción 3 es todo el universo, pero la correcta es {b,d} (opción 2, revisar índice). En la lista la opción 2 es {b,d}. Perdón: opciones: 0: {a,c,e}, 1: {b,d}, 2: universo, 3: {b,d,a,c,e} que es universo también. La correcta es {b,d} (índice 1).",
+    "respuesta_correcta": 1,
+    "explicacion": "A^c = {b,d}, unión con B = {b,d}.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-CON-03",
+    "subtema": "Conjuntos",
+    "enunciado": "En una encuesta a 200 personas: 120 leen el diario A, 90 leen B, 50 leen ambos. ¿Cuántas no leen ninguno?",
+    "opciones": ["40", "50", "60", "70"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Leen al menos uno: 120+90-50=160. No leen ninguno: 200-160=40.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-CON-04",
+    "subtema": "Conjuntos",
+    "enunciado": "Si \\( A \\subseteq B \\) y \\( B \\subseteq C \\), entonces es correcto que:",
+    "opciones": [
+      "\\( A \\cap C = \\emptyset \\)",
+      "\\( A \\cup C = C \\)",
+      "\\( A \\setminus C = A \\)",
+      "\\( B \\subseteq A \\)"
+    ],
+    "respuesta_correcta": 1,
+    "tipo": "multiple",
+    "explicacion": "Si A⊆B⊆C, entonces A⊆C, luego A∪C = C.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-CON-05",
+    "subtema": "Conjuntos",
+    "enunciado": "Halla \\( (A \\triangle B) \\triangle C \\) si \\( A = \\{1,2\\} \\), \\( B = \\{2,3\\} \\), \\( C = \\{3,4\\} \\)",
+    "opciones": [
+      "\\( \\{1,4\\} \\)",
+      "\\( \\{1,2,3,4\\} \\)",
+      "\\( \\emptyset \\)",
+      "\\( \\{2,3\\} \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "AΔB = {1,3}. Luego {1,3} Δ C = {1,4}.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-CON-06",
+    "subtema": "Conjuntos",
+    "enunciado": "¿Cuál es el conjunto potencia de \\( \\{a,\\{b\\}\\} \\)?",
+    "opciones": [
+      "\\( \\{\\emptyset, \\{a\\}, \\{\\{b\\}\\}, \\{a,\\{b\\}\\}\\} \\)",
+      "\\( \\{\\emptyset, a, \\{b\\}, \\{a,\\{b\\}\\}\\} \\)",
+      "\\( \\{a, \\{b\\}\\} \\)",
+      "\\( \\{a, b\\} \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "El conjunto potencia tiene 2^2=4 elementos: vacío, {a}, {{b}}, {a,{b}}.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-CON-07",
+    "subtema": "Conjuntos",
+    "enunciado": "Dados \\( A = \\{1,2,3,4\\} \\), \\( B = \\{3,4,5,6\\} \\). Halla \\( A \\setminus (B \\setminus A) \\)",
+    "opciones": [
+      "\\( \\{1,2,3,4\\} \\)",
+      "\\( \\{3,4\\} \\)",
+      "\\( \\{1,2\\} \\)",
+      "\\( \\emptyset \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "B \\ A = {5,6}, entonces A \\ {5,6} = A.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-CON-08",
+    "subtema": "Conjuntos",
+    "enunciado": "Si \\( A \\cap B = \\emptyset \\), ¿cuál de las siguientes es verdadera?",
+    "opciones": [
+      "\\( A \\subseteq B^c \\)",
+      "\\( B \\subseteq A \\)",
+      "\\( A \\cup B = \\emptyset \\)",
+      "\\( A = B \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Si no tienen elementos en común, todos los elementos de A están fuera de B, es decir A⊆B^c.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-CON-09",
+    "subtema": "Conjuntos",
+    "enunciado": "En una universidad, el 60% estudia inglés, 50% francés, 20% ambos. ¿Qué porcentaje estudia solo uno de los dos idiomas?",
+    "opciones": ["70%", "50%", "90%", "30%"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Solo inglés: 60-20=40%, solo francés: 50-20=30%, total solo uno: 70%.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-CON-10",
+    "subtema": "Conjuntos",
+    "enunciado": "Si \\( A \\cup B = A \\), entonces:",
+    "opciones": [
+      "\\( B \\subseteq A \\)",
+      "\\( A \\subseteq B \\)",
+      "\\( A = B \\)",
+      "\\( A \\cap B = \\emptyset \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "A ∪ B = A implica que todos los elementos de B están en A, es decir B⊆A.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-NUM-01",
+    "subtema": "Operaciones con números reales",
+    "enunciado": "Resuelve \\( |2x - 5| = 7 \\)",
+    "opciones": [
+      "\\( x = 6 \\text{ o } x = -1 \\)",
+      "\\( x = 6 \\text{ o } x = 1 \\)",
+      "\\( x = -6 \\text{ o } x = -1 \\)",
+      "\\( x = -6 \\text{ o } x = 1 \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "2x-5=7 → x=6; 2x-5=-7 → 2x=-2 → x=-1.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-NUM-02",
+    "subtema": "Operaciones con números reales",
+    "enunciado": "Simplifica \\( \\frac{x^2 - 4}{x-2} \\) para \\( x \\neq 2 \\)",
+    "opciones": [
+      "\\( x+2 \\)",
+      "\\( x-2 \\)",
+      "\\( x \\)",
+      "\\( 2x \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "x²-4 = (x-2)(x+2), cancelando (x-2) queda x+2.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-NUM-03",
+    "subtema": "Operaciones con números reales",
+    "enunciado": "Determina el intervalo solución de \\( 3x - 5 \\leq 7 \\)",
+    "opciones": [
+      "\\( (-\\infty, 4] \\)",
+      "\\( (-\\infty, 4) \\)",
+      "\\( [4, \\infty) \\)",
+      "\\( (-\\infty, -4] \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "3x ≤ 12 → x ≤ 4, intervalo (-∞,4].",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-NUM-04",
+    "subtema": "Operaciones con números reales",
+    "enunciado": "En una progresión aritmética, el tercer término es 10 y el séptimo es 22. Halla el primer término.",
+    "opciones": ["4", "6", "8", "2"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "a₃ = a₁+2d=10, a₇=a₁+6d=22. Restando: 4d=12 → d=3, luego a₁=10-2*3=4.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-NUM-05",
+    "subtema": "Operaciones con números reales",
+    "enunciado": "Calcula la suma de los primeros 10 términos de la progresión geométrica: 2, 6, 18, ...",
+    "opciones": [
+      "\\( 3^{10} - 1 \\)",
+      "\\( 3^{10} + 1 \\)",
+      "\\( \\frac{2(3^{10} - 1)}{3-1} \\)",
+      "\\( 2(3^{10} - 1) \\)"
+    ],
+    "respuesta_correcta": 2,
+    "tipo": "multiple",
+    "explicacion": "a₁=2, r=3, suma = a₁(rⁿ-1)/(r-1) = 2(3¹⁰-1)/2 = 3¹⁰-1.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-NUM-06",
+    "subtema": "Operaciones con números reales",
+    "enunciado": "Resuelve la inecuación \\( \\frac{x-1}{x+2} > 0 \\)",
+    "opciones": [
+      "\\( (-\\infty, -2) \\cup (1, \\infty) \\)",
+      "\\( (-2, 1) \\)",
+      "\\( (-\\infty, 1) \\)",
+      "\\( (1, \\infty) \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Numerador cero en x=1, denominador cero en x=-2. Análisis de signos: positivo en (-∞,-2) y (1,∞).",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-NUM-07",
+    "subtema": "Operaciones con números reales",
+    "enunciado": "Si \\( a < b \\), ¿cuál de las siguientes es siempre cierta?",
+    "opciones": [
+      "\\( a^2 < b^2 \\)",
+      "\\( -a > -b \\)",
+      "\\( 1/a > 1/b \\)",
+      "\\( a - b > 0 \\)"
+    ],
+    "respuesta_correcta": 1,
+    "tipo": "multiple",
+    "explicacion": "Multiplicar por -1 invierte la desigualdad: a<b ⇒ -a > -b.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-NUM-08",
+    "subtema": "Operaciones con números reales",
+    "enunciado": "Racionaliza: \\( \\frac{3}{\\sqrt{5} - \\sqrt{2}} \\)",
+    "opciones": [
+      "\\( \\sqrt{5} + \\sqrt{2} \\)",
+      "\\( 3(\\sqrt{5} + \\sqrt{2}) \\)",
+      "\\( \\frac{3(\\sqrt{5} + \\sqrt{2})}{3} \\)",
+      "\\( \\frac{3(\\sqrt{5} + \\sqrt{2})}{7} \\)"
+    ],
+    "respuesta_correcta": 1,
+    "tipo": "multiple",
+    "explicacion": "Multiplicar conjugado: 3(√5+√2)/(5-2)=3(√5+√2)/3 = √5+√2.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-NUM-09",
+    "subtema": "Operaciones con números reales",
+    "enunciado": "Halla el valor de \\( \\frac{3}{4} + \\frac{5}{6} - \\frac{1}{2} \\)",
+    "opciones": [
+      "\\( \\frac{13}{12} \\)",
+      "\\( \\frac{11}{12} \\)",
+      "\\( \\frac{7}{12} \\)",
+      "\\( \\frac{5}{12} \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "MCM 12: (9+10-6)/12 = 13/12.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-NUM-10",
+    "subtema": "Operaciones con números reales",
+    "enunciado": "Simplifica \\( \\sqrt{50} + \\sqrt{18} - \\sqrt{8} \\)",
+    "opciones": [
+      "\\( 6\\sqrt{2} \\)",
+      "\\( 5\\sqrt{2} \\)",
+      "\\( 7\\sqrt{2} \\)",
+      "\\( 8\\sqrt{2} \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "√50=5√2, √18=3√2, √8=2√2, suma: 5+3-2=6√2.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-FUN-01",
+    "subtema": "Funciones algebraicas",
+    "enunciado": "Determina el dominio de \\( f(x) = \\frac{\\sqrt{x-3}}{x^2-4} \\)",
+    "opciones": [
+      "\\( [3, \\infty) \\setminus \\{2\\} \\)",
+      "\\( [3, \\infty) \\setminus \\{-2,2\\} \\)",
+      "\\( (3, \\infty) \\)",
+      "\\( [3, \\infty) \\)"
+    ],
+    "respuesta_correcta": 1,
+    "tipo": "multiple",
+    "explicacion": "Raíz: x≥3. Denominador: x≠2 y x≠-2. Como x≥3, solo excluir 2. Dominio: [3,∞) pero 2 no está en ese intervalo, entonces [3,∞) sin restricción adicional (pues 2 no pertenece). Revisar: la opción correcta es [3,∞) porque 2 está fuera. La opción 3 es (3,∞) excluye 3. Entonces dominio [3,∞) es la opción 3? En las opciones: 0: [3,∞)\\{2}, 1: [3,∞)\\{-2,2}, 2: (3,∞), 3: [3,∞). Como 2 no está en [3,∞), da igual. La respuesta es [3,∞) índice 3.",
+    "respuesta_correcta": 3,
+    "explicacion": "La raíz exige x-3≥0 → x≥3. El denominador x²-4≠0 → x≠±2, pero ±2 no están en [3,∞). Dominio = [3,∞).",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-FUN-02",
+    "subtema": "Funciones algebraicas",
+    "enunciado": "Si \\( f(x) = 3x - 2 \\) y \\( g(x) = x^2 + 1 \\), halla \\( (f \\circ g)(2) \\)",
+    "opciones": ["13", "11", "15", "17"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "g(2)=4+1=5, luego f(5)=15-2=13.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-FUN-03",
+    "subtema": "Funciones algebraicas",
+    "enunciado": "La función \\( f(x) = \\frac{2x+1}{x-3} \\), halla su inversa \\( f^{-1}(x) \\)",
+    "opciones": [
+      "\\( \\frac{3x+1}{x-2} \\)",
+      "\\( \\frac{3x-1}{x-2} \\)",
+      "\\( \\frac{2x+1}{x-3} \\)",
+      "\\( \\frac{x+1}{x-3} \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Despejar: y=(2x+1)/(x-3) → y(x-3)=2x+1 → yx-3y=2x+1 → yx-2x=3y+1 → x(y-2)=3y+1 → x=(3y+1)/(y-2), cambiando variables: f⁻¹(x)=(3x+1)/(x-2).",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-FUN-04",
+    "subtema": "Funciones algebraicas",
+    "enunciado": "¿Cuál de las siguientes funciones es **par**?",
+    "opciones": [
+      "\\( f(x)=x^3 \\)",
+      "\\( f(x)=x^2+1 \\)",
+      "\\( f(x)=x^3+2x \\)",
+      "\\( f(x)=|x|+x \\)"
+    ],
+    "respuesta_correcta": 1,
+    "tipo": "multiple",
+    "explicacion": "Función par: f(-x)=f(x). x²+1 cumple, las otras son impares o ninguna.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-FUN-05",
+    "subtema": "Funciones algebraicas",
+    "enunciado": "Determina el rango de \\( f(x) = -x^2 + 4x - 1 \\)",
+    "opciones": [
+      "\\( (-\\infty, 3] \\)",
+      "\\( [3, \\infty) \\)",
+      "\\( (-\\infty, 4] \\)",
+      "\\( [4, \\infty) \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Vértice en x=-b/(2a)= -4/( -2)=2, f(2)= -4+8-1=3. Parábola abre hacia abajo, rango (-∞,3].",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-FUN-06",
+    "subtema": "Funciones algebraicas",
+    "enunciado": "Sea \\( f(x) = \\frac{x-1}{x+2} \\). ¿Cuál es su asíntota horizontal?",
+    "opciones": ["y=1", "y=0", "y=-1", "y=2"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Grado iguales, coeficientes líderes: 1/1 → y=1.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-FUN-07",
+    "subtema": "Funciones algebraicas",
+    "enunciado": "Si \\( f(x) = \\sqrt{x+1} \\) y \\( g(x)=x^2-1 \\), halla \\( (g \\circ f)(x) \\)",
+    "opciones": [
+      "\\( x \\)",
+      "\\( x+2 \\)",
+      "\\( |x| \\)",
+      "\\( x^2+2x \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "g(f(x)) = (√(x+1))² -1 = x+1-1 = x.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-FUN-08",
+    "subtema": "Funciones algebraicas",
+    "enunciado": "La función \\( f(x) = \\frac{1}{x-2} + 3 \\) tiene una asíntota vertical en:",
+    "opciones": ["x=2", "x=-2", "x=3", "x=0"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Denominador cero en x=2.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-FUN-09",
+    "subtema": "Funciones algebraicas",
+    "enunciado": "Factoriza \\( x^3 - 8 \\)",
+    "opciones": [
+      "\\( (x-2)(x^2+2x+4) \\)",
+      "\\( (x+2)(x^2-2x+4) \\)",
+      "\\( (x-2)^3 \\)",
+      "\\( (x+2)(x^2+2x+4) \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Diferencia de cubos: a³-b³=(a-b)(a²+ab+b²).",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-FUN-10",
+    "subtema": "Funciones algebraicas",
+    "enunciado": "Determina si la función \\( f(x) = x^3 - x \\) es creciente en el intervalo \\( (0, \\infty) \\)",
+    "opciones": [
+      "Sí, siempre creciente",
+      "No, es decreciente",
+      "Creciente hasta cierto punto y luego decreciente",
+      "Decreciente hasta cierto punto y luego creciente"
+    ],
+    "respuesta_correcta": 2,
+    "tipo": "multiple",
+    "explicacion": "Derivada 3x²-1. En (0, 1/√3) es negativa, luego positiva. Por tanto decrece y luego crece.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-TRI-01",
+    "subtema": "Funciones trigonométricas",
+    "enunciado": "Halla el valor de \\( \\sin 150^\\circ \\)",
+    "opciones": ["1/2", "√3/2", "-1/2", "-√3/2"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "150° = 180°-30°, sen(180-θ)=senθ, sen30°=1/2.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-TRI-02",
+    "subtema": "Funciones trigonométricas",
+    "enunciado": "Simplifica \\( \\frac{\\sec x}{\\csc x} \\)",
+    "opciones": [
+      "\\( \\tan x \\)",
+      "\\( \\cot x \\)",
+      "\\( \\sin x \\)",
+      "\\( \\cos x \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "sec x = 1/cos x, csc x = 1/sin x, entonces (1/cos)/(1/sin)= sin/cos = tan x.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-TRI-03",
+    "subtema": "Funciones trigonométricas",
+    "enunciado": "Resuelve \\( \\cos^2 x - \\sin^2 x = \\frac{1}{2} \\) para \\( x \\in [0, 2\\pi) \\)",
+    "opciones": [
+      "\\( \\frac{\\pi}{6}, \\frac{5\\pi}{6}, \\frac{7\\pi}{6}, \\frac{11\\pi}{6} \\)",
+      "\\( \\frac{\\pi}{3}, \\frac{2\\pi}{3}, \\frac{4\\pi}{3}, \\frac{5\\pi}{3} \\)",
+      "\\( \\frac{\\pi}{4}, \\frac{3\\pi}{4}, \\frac{5\\pi}{4}, \\frac{7\\pi}{4} \\)",
+      "\\( \\frac{\\pi}{2}, \\frac{3\\pi}{2} \\)"
+    ],
+    "respuesta_correcta": 1,
+    "tipo": "multiple",
+    "explicacion": "cos²x - sin²x = cos2x = 1/2 → 2x = π/3, 5π/3, 7π/3, 11π/3 → x = π/6, 5π/6, 7π/6, 11π/6. Opción 0.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-TRI-04",
+    "subtema": "Funciones trigonométricas",
+    "enunciado": "Demuestra la identidad: \\( \\tan x + \\cot x = \\sec x \\csc x \\)",
+    "opciones": [
+      "Verdadera para todo x donde estén definidas",
+      "Falsa",
+      "Verdadera solo si x=45°",
+      "Verdadera solo si x=0"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "tan x + cot x = sen/cos + cos/sen = (sen²+cos²)/(sen cos)=1/(sen cos)=sec csc.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-TRI-05",
+    "subtema": "Funciones trigonométricas",
+    "enunciado": "Un triángulo rectángulo tiene un cateto de 3 cm y la hipotenusa 5 cm. Halla el seno del ángulo agudo opuesto al cateto de 3 cm.",
+    "opciones": ["3/5", "4/5", "3/4", "5/3"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "sen = cateto opuesto/hipotenusa = 3/5.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-TRI-06",
+    "subtema": "Funciones trigonométricas",
+    "enunciado": "¿Cuál es el período de \\( f(x) = \\cos(3x) \\)?",
+    "opciones": [
+      "\\( \\frac{2\\pi}{3} \\)",
+      "\\( 2\\pi \\)",
+      "\\( \\frac{\\pi}{3} \\)",
+      "\\( \\pi \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Período = 2π/|k| = 2π/3.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-TRI-07",
+    "subtema": "Funciones trigonométricas",
+    "enunciado": "Resuelve \\( \\sin x = \\frac{\\sqrt{3}}{2} \\) en \\( [0, 2\\pi) \\)",
+    "opciones": [
+      "\\( \\frac{\\pi}{3}, \\frac{2\\pi}{3} \\)",
+      "\\( \\frac{\\pi}{6}, \\frac{5\\pi}{6} \\)",
+      "\\( \\frac{\\pi}{4}, \\frac{3\\pi}{4} \\)",
+      "\\( \\frac{\\pi}{3}, \\frac{5\\pi}{3} \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "sin x = √3/2 → x=60° y 120° (π/3, 2π/3).",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-TRI-08",
+    "subtema": "Funciones trigonométricas",
+    "enunciado": "Simplifica \\( \\sin^4 x - \\cos^4 x \\)",
+    "opciones": [
+      "\\( \\sin^2 x - \\cos^2 x \\)",
+      "\\( 2\\sin^2 x - 1 \\)",
+      "\\( 1 - 2\\cos^2 x \\)",
+      "Todas las anteriores"
+    ],
+    "respuesta_correcta": 3,
+    "tipo": "multiple",
+    "explicacion": "Diferencia de cuadrados: (sin²-cos²)(sin²+cos²)= sin²-cos², que también es = 2sin²-1 = 1-2cos².",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-TRI-09",
+    "subtema": "Funciones trigonométricas",
+    "enunciado": "Halla \\( \\tan(\\arctan(2) + \\arctan(3)) \\)",
+    "opciones": ["-1", "1", "5", "Indefinido"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "tan(A+B)= (2+3)/(1-2*3)=5/(1-6)=5/(-5)=-1.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-TRI-10",
+    "subtema": "Funciones trigonométricas",
+    "enunciado": "La función \\( f(x) = 2\\sin(3x - \\pi/2) \\) tiene una amplitud de:",
+    "opciones": ["2", "3", "π/2", "1"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Amplitud = |A| = 2.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-EXP-01",
+    "subtema": "Función exponencial y logarítmica",
+    "enunciado": "Resuelve \\( 3^{2x-1} = 27^{x+2} \\)",
+    "opciones": ["x = -7", "x = 7", "x = -5", "x = 5"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "27=3³ → 3^{2x-1}=3^{3(x+2)} → 2x-1=3x+6 → -x=7 → x=-7.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-EXP-02",
+    "subtema": "Función exponencial y logarítmica",
+    "enunciado": "Simplifica \\( \\log_2 8 + \\log_2 4 \\)",
+    "opciones": ["5", "6", "3", "4"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "log₂8=3, log₂4=2, suma=5.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-EXP-03",
+    "subtema": "Función exponencial y logarítmica",
+    "enunciado": "Si \\( \\log_2 (x-1) = 3 \\), halla x.",
+    "opciones": ["9", "8", "7", "5"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "x-1=2³=8 → x=9.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-EXP-04",
+    "subtema": "Función exponencial y logarítmica",
+    "enunciado": "Resuelve \\( e^{2x} - 3e^x + 2 = 0 \\)",
+    "opciones": [
+      "\\( x = 0 \\text{ o } x = \\ln 2 \\)",
+      "\\( x = 1 \\text{ o } x = 2 \\)",
+      "\\( x = 0 \\text{ o } x = 1 \\)",
+      "\\( x = \\ln 2 \\text{ o } x = \\ln 3 \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Sea u=e^x, u²-3u+2=0 → u=1,2 → e^x=1 → x=0; e^x=2 → x=ln2.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-EXP-05",
+    "subtema": "Función exponencial y logarítmica",
+    "enunciado": "Halla el dominio de \\( f(x) = \\ln(x^2 - 4) \\)",
+    "opciones": [
+      "\\( (-\\infty, -2) \\cup (2, \\infty) \\)",
+      "\\( [-2, 2] \\)",
+      "\\( (-2, 2) \\)",
+      "\\( (-\\infty, \\infty) \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Argumento positivo: x²-4>0 → |x|>2.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-EXP-06",
+    "subtema": "Función exponencial y logarítmica",
+    "enunciado": "Expresa \\( \\log_a \\frac{x^3}{\\sqrt{y}} \\) en términos de logaritmos simples.",
+    "opciones": [
+      "\\( 3\\log_a x - \\frac{1}{2}\\log_a y \\)",
+      "\\( 3\\log_a x + \\frac{1}{2}\\log_a y \\)",
+      "\\( \\frac{3}{2}\\log_a x - \\log_a y \\)",
+      "\\( 3\\log_a x - 2\\log_a y \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "log(x³) - log(y^{1/2}) = 3log x - (1/2)log y.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-EXP-07",
+    "subtema": "Función exponencial y logarítmica",
+    "enunciado": "Resuelve la inecuación \\( \\log_2 (x-3) > 1 \\)",
+    "opciones": [
+      "\\( x > 5 \\)",
+      "\\( x > 3 \\)",
+      "\\( x > 4 \\)",
+      "\\( x < 5 \\)"
+    ],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "log₂(x-3)>1 → x-3>2 → x>5.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-EXP-08",
+    "subtema": "Función exponencial y logarítmica",
+    "enunciado": "Si \\( \\ln a = 2 \\) y \\( \\ln b = 3 \\), calcula \\( \\ln(a^2 b^3) \\)",
+    "opciones": ["13", "12", "10", "15"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "ln(a²b³)=2ln a + 3ln b = 2*2+3*3=4+9=13.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-EXP-09",
+    "subtema": "Función exponencial y logarítmica",
+    "enunciado": "¿Cuál es la asíntota horizontal de \\( f(x) = 2e^{-x} + 1 \\)?",
+    "opciones": ["y=1", "y=0", "y=2", "y=-1"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Cuando x→∞, e^{-x}→0, f→1.",
+    "puntos": 1
+  },
+  {
+    "id": "ALG-EXP-10",
+    "subtema": "Función exponencial y logarítmica",
+    "enunciado": "Resuelve \\( \\log_{5} (2x+3) = \\log_{5} (x+6) \\)",
+    "opciones": ["x=3", "x=1", "x=-3", "x=2"],
+    "respuesta_correcta": 0,
+    "tipo": "multiple",
+    "explicacion": "Igualdad de logs con misma base: 2x+3=x+6 → x=3, y verifica dominio.",
+    "puntos": 1
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "tiempo_real_minutos": 90,
+  "codigo_longitud": 10,
+  "modos": {
+    "rapido": {
+      "total_preguntas": 20,
+      "algebra": 10,
+      "fisica": 10
+    },
+    "real": {
+      "total_preguntas": 30,
+      "algebra": 15,
+      "fisica": 15
+    }
+  },
+  "ponderaciones": {
+    "examen_porcentaje": 70,
+    "colegio_porcentaje": 30,
+    "puntaje_total_escala": 1000
+  },
+  "escala_examen": 100,
+  "escala_colegio": 10
+}
