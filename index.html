@@ -4,12 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Simulador Examen ESPE - Grupo D (Ingenierías)</title>
-    <!-- KaTeX CSS & JS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" 
-            onload="renderMathInElement(document.body, { delimiters: [{left: '\\\\(', right: '\\\\)', display: false}, {left: '\\\\[', right: '\\\\]', display: true}] });">
-    </script>
+    <!-- KaTeX desde Cloudflare (evita bloqueos de Tracking Prevention) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
     <style>
         * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background: #f0f2f5; margin: 0; padding: 20px; }
@@ -141,6 +138,49 @@
     const progresoDiv = document.getElementById('progreso');
     const preguntaContainer = document.getElementById('pregunta-container');
 
+    // Función robusta para renderizar ecuaciones con KaTeX
+    function renderizarEcuaciones(elemento) {
+        if (!elemento) return;
+        // Esperar a que KaTeX esté disponible
+        if (typeof katex !== 'undefined' && typeof renderMathInElement === 'undefined') {
+            // Si auto-render no está cargado, definimos una función simple
+            window.renderMathInElement = function(elem, opts) {
+                // Buscar todos los elementos con delimitadores \( ... \) o \[ ... \]
+                const texto = elem.innerHTML;
+                const reInline = /\\\((.+?)\\\)/g;
+                const reDisplay = /\\\[(.+?)\\\]/g;
+                let nuevo = texto.replace(reInline, (match, eq) => {
+                    try {
+                        return katex.renderToString(eq, { throwOnError: false });
+                    } catch(e) { return match; }
+                }).replace(reDisplay, (match, eq) => {
+                    try {
+                        return katex.renderToString(eq, { displayMode: true, throwOnError: false });
+                    } catch(e) { return match; }
+                });
+                elem.innerHTML = nuevo;
+            };
+        }
+        if (typeof renderMathInElement === 'function') {
+            renderMathInElement(elemento, {
+                delimiters: [
+                    {left: '\\\\(', right: '\\\\)', display: false},
+                    {left: '\\\\[', right: '\\\\]', display: true}
+                ]
+            });
+        } else if (typeof katex !== 'undefined') {
+            // Fallback manual
+            const inline = /\\\((.+?)\\\)/g;
+            const display = /\\\[(.+?)\\\]/g;
+            let html = elemento.innerHTML;
+            html = html.replace(inline, (m, eq) => katex.renderToString(eq, { throwOnError: false }));
+            html = html.replace(display, (m, eq) => katex.renderToString(eq, { displayMode: true, throwOnError: false }));
+            elemento.innerHTML = html;
+        } else {
+            console.warn("KaTeX no cargó correctamente");
+        }
+    }
+
     // ----------------------------
     // 2. Carga de archivos JSON externos (incluye usuarios)
     // ----------------------------
@@ -168,7 +208,6 @@
             const usuariosData = await usuariosResp.json();
             usuariosValidos = usuariosData.usuarios || [];
 
-            // Validaciones mínimas
             if (!config || !config.modos || !config.ponderaciones) throw new Error('config.json inválido');
             if (!carreras || !carreras.carreras) throw new Error('carreras.json inválido');
             if (!Array.isArray(algebraQuestions) || algebraQuestions.length === 0) throw new Error('algebra_preguntas.json vacío o inválido');
@@ -226,7 +265,6 @@
         const pregAlg = seleccionarAleatorias(algebraQuestions, numAlg);
         const pregFis = seleccionarAleatorias(fisicaQuestions, numFis);
         let todas = [...pregAlg, ...pregFis];
-        // Mezclar orden final
         for (let i = todas.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [todas[i], todas[j]] = [todas[j], todas[i]];
@@ -273,17 +311,8 @@
         html += `</div></div>`;
         preguntaContainer.innerHTML = html;
 
-        // FORZAR RENDERIZADO DE ECUACIONES CON KATEX
-        if (window.renderMathInElement) {
-            renderMathInElement(preguntaContainer, {
-                delimiters: [
-                    {left: '\\\\(', right: '\\\\)', display: false},
-                    {left: '\\\\[', right: '\\\\]', display: true}
-                ]
-            });
-        } else {
-            console.warn("KaTeX no está listo todavía");
-        }
+        // Aplicar renderizado de ecuaciones
+        renderizarEcuaciones(preguntaContainer);
         progresoDiv.innerHTML = `Pregunta ${preguntaActualIndex+1} de ${preguntasExamen.length}`;
     }
 
@@ -370,6 +399,8 @@
         });
         html += `</table>`;
         container.innerHTML = html;
+        // Renderizar ecuaciones también en resultados por si acaso
+        renderizarEcuaciones(container);
     }
 
     function reiniciarSimulador() {
